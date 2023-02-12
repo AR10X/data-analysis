@@ -1,0 +1,13 @@
+1. Give the count of the minimum number of days for the time when temperature reduced
+
+SELECT COUNT(*)
+FROM (SELECT Date, Temperature, 
+             LAG(Temperature) OVER (ORDER BY Date) AS prev_temp
+      FROM weather_dataset_v2) t
+WHERE temperature < prev_temp;
+
+1829
+
+
+3.   Can you check for all 4 consecutive days when the temperature was below 30 Fahrenheit
+
