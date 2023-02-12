@@ -1,4 +1,4 @@
-<h1> :snowflake: Weather Forecasting Analysis and Visualization Project</h1>
+<h2> :snowflake: Weather Forecasting Analysis and Visualization Project</h2>
 
 <h3>About the Project</h3>
 
