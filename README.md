@@ -24,9 +24,11 @@
 <hr>
 
 <h3>:house: Data Wizards Members </h3>
-<ol>
-    <li>[Abdul Rehaman](https://github.com/AR10X)</li>
-    <li>[Ashrith M R](https://github.com/ashhh-01)</li>
-    <li>[Danish Hasan](https://github.com/DanishHasan14321)<li>
-</ol>
+
+1. [Abdul Rehaman](https://github.com/AR10X)
+2. [Ashrith M R](https://github.com/ashhh-01)
+3. [Danish Hasan](https://github.com/DanishHasan14321)
+4. [Shiwali Verma](https://github.com/AR10X/data-analysis)
+<hr>
+
 
