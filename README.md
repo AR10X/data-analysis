@@ -1,4 +1,4 @@
-<h1> :snowflake: Weather Forecasting Analysis and Visualization Project</h1>
+<h2> :snowflake: Weather Forecasting Analysis and Visualization Project</h2>
 
 <h3>About the Project</h3>
 
@@ -14,7 +14,7 @@
 
 <p>The following tools and technologies are used in the project:</p>
 
-<details open><summary>SQL (MYSQL):</summary> Used for managing and storing the large amounts of weather data that is collected for the analysis.
+<details open><summary>SQL (MYSQL):</summary> Used for managing and storing the large amounts of weather data that is collected for the analysis.</details>
 
 <details open><summary>Power BI/ Tableau:</summary> Used for creating interactive and visually appealing dashboards, charts and graphs that present the results of the weather data analysis.</details>
 
