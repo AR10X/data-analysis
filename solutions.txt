@@ -41,6 +41,31 @@ ________________________________________________________________________________
 4.  Can you find the maximum number of days for which temperature dropped
 
 
+WITH weather_data_temp AS (
+  SELECT 
+    Date, 
+    Temperature, 
+    LAG(Temperature, 1) OVER (ORDER BY Date) AS prev_temp 
+  FROM weather_dataset_v2
+) 
+SELECT 
+  Date, 
+  Temperature, 
+  prev_temp, 
+  CASE 
+    WHEN prev_temp <= Temperature THEN 0
+    ELSE 1 
+  END AS drop_temp_indicator, 
+  SUM(CASE 
+    WHEN prev_temp <= Temperature THEN 0
+    ELSE 1 
+  END) 
+    OVER (ORDER BY Date 
+          ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) 
+  AS drop_temp_count 
+FROM weather_data_temp 
+ORDER BY Date;
+
 
 
 ______________________________________________________________________________________________________
@@ -76,7 +101,43 @@ ________________________________________________________________________________
 
 8. If the maximum gust speed increases from 55mph, fetch the details for the next 4 days ( NOTE: data consistency and uniformity should be maintained )
 
-
+SELECT 
+  Date, 
+  Temperature, 
+  `Average humidity (%)`, 
+  `Average dewpoint (Â°F)`, 
+  `Average barometer (in)`, 
+  `Average windspeed (mph)`, 
+  `Average gustspeed (mph)`, 
+  `Average direction (Â°deg)`, 
+  `Rainfall for month (in)`, 
+  `Rainfall for year (in)`, 
+  `Maximum rain per minute`, 
+  `Maximum temperature (Â°F)`, 
+  `Minimum temperature (Â°F)`, 
+  `Maximum humidity (%)`, 
+  `Minimum humidity (%)`, 
+  `Maximum pressure`, 
+  `Minimum pressure`, 
+  `Maximum windspeed (mph)`, 
+  `Maximum gust speed (mph)`, 
+  `Maximum heat index (Â°F)`, 
+  Month, 
+  diff_pressure
+FROM weather_dataset_v2
+WHERE 
+  Date >= (
+    SELECT MIN(Date) 
+    FROM weather_dataset_v2 
+    WHERE `Maximum gust speed (mph)` >= 55
+  ) 
+  AND Date <= (
+    SELECT MIN(Date) + INTERVAL 4 DAY 
+    FROM weather_dataset_v2 
+    WHERE `Maximum gust speed (mph)` >= 55
+  )
+ORDER BY 
+  Date;
 
 
 
