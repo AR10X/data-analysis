@@ -10,6 +10,9 @@
 <p>The project makes use of various data sources to gather weather information such as temperature, precipitation, pressure, and other important meteorological data. This data is then processed and analyzed using various data analysis and visualization tools such as <b>SQL, Excel, Power BI/ Tableau and Python.</b> The results of this analysis are then presented to the users through interactive visualizations and graphs, making it easier for them to understand and analyze weather trends and patterns.</p>
 
 <hr>
+<h3>Power BI Dashboard - Overview</h3>
+<img src="">
+<hr>
 <h3>:calling: Tech Used</h3>
 
 <p>The following tools and technologies are used in the project:</p>
